@@ -9,8 +9,8 @@ interface CharacterCardProps {
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ displayName, description, displayIconSmall, onClick}) => {
   return (
-      <Box onClick={onClick} className="cursor-pointer">
-        <Card className="flex max-w-50 max-h-30 ">
+      <Box onClick={onClick} className="cursor-pointer transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-105 duration-300 hover:shadow-md hover:shadow-red-700">
+        <Card className="flex w-50 max-h-30 ">
         <CardContent className="flex items-center">
           
           <img src={displayIconSmall} alt="" className="size-20"/>

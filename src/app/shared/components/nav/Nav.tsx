@@ -9,15 +9,15 @@ export const Nav: React.FC<SearchProps> = ({ onSearchChange}) => {
 
 
   return (
-    <div className="p-4 bg-rose-800 flex justify-between">
-      <Typography variant="h4" className="text-white">Valorant Characters</Typography>
+    <div className="p-4 bg-rose-700 flex items-center justify-between">
+      <h1 className="text-white text-lg sm:text-xl md:text-2xl">Valorant Characters</h1> 
     
         <div className="flex gap-2">
           <input
             type="text"
             onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search"
-            className="bg-rose-800 p-3 rounded border border-white text-white caret-white"
+            placeholder="Pesquisar..."
+            className="bg-rose-700 p-1 xs:p-0 sm:p-2 md:px-3 rounded border border-white text-white caret-white focus:outline-none"
           />
         </div>
      
