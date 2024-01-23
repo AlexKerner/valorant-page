@@ -1,3 +1,4 @@
+import { useRef } from "react";
 interface Character {
   uuid: string;
   displayName: string;
@@ -27,14 +28,23 @@ export const Modal: React.FC<ModalComponentProps> = ({
   character,
   onClose,
 }) => {
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleClose = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target === modalRef.current) {
+      onClose();
+    }
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div className="absolute w-3/4 h-3/4 z-10  bg-rose-700 overflow-auto text-white p-6 rounded-lg">
-        <span
-          className="absolute top-0 right-0 p-4 cursor-pointer"
-          onClick={onClose}
-        >
+      <div
+        ref={modalRef}
+        className="absolute inset-0 bg-black opacity-50"
+        onClick={handleClose}
+      ></div>
+      <div className="absolute w-3/4 h-3/4 z-10 bg-rose-700 overflow-auto text-white p-6 rounded-lg">
+        <span className="absolute top-0 right-0 p-4 cursor-pointer" onClick={onClose}>
           &times;
         </span>
         <div className="flex-col sm:flex md:flex-row md:items-center">

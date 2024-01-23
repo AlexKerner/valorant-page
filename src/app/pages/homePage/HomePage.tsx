@@ -70,7 +70,7 @@ export const HomePage = () => {
       />
 
       <div className="bg-slate-200 flex m-0 p-0 ">
-        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 m-4 sm:grid-cols-2 items-center sm:m-10 p-5 rounded shadow shadow-rose-700">
+        <div className="grid grid-cols-1 gap-4 lg:grid-cols-3 m-4 sm:grid-cols-2 items-center sm:m-10 p-5 ">
           {filteredItems.map((character, index) => (
             <CharacterCard
               key={index}
